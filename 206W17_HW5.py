@@ -69,8 +69,12 @@ def get_twitterinfo():
 		print("Using cached data for", query)
 		search_results = CACHE_DICTION[query]
 	else:
-		print("getting new data from the web for", query)
+		print("getting new data from the web for", query)  
 		search_results = api.search(query, count = 3)
+		CACHE_DICTION[query] = search_results
+		f = open(CACHE_FNAME,'w')
+		f.write(json.dumps(CACHE_DICTION))
+		f.close()
 	return search_results
 print(get_twitterinfo())
 
