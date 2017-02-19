@@ -76,7 +76,24 @@ def get_twitterinfo():
 		f.write(json.dumps(CACHE_DICTION))
 		f.close()
 	return search_results
-print(get_twitterinfo())
+
+##PART 4
+tweet_data = get_twitterinfo()
+
+toString = json.dumps(tweet_data)
+toJsonAgain = json.loads(toString)
+
+
+final_dict = {}
+for i in toJsonAgain["statuses"]:
+	final_dict[i['text']] = i['user']['created_at']
+for k in final_dict:
+	print("TEXT:", k)
+	print("CREATED AT:", final_dict[k])
+	print("\n")
+
+
+
 
 #jsonformatter.org  -> beautify type cast to string  if unicode error
 
