@@ -88,9 +88,9 @@ final_dict = {}
 for i in toJsonAgain["statuses"]:
 	final_dict[i['text']] = i['user']['created_at']
 for k in final_dict:
-	print("TEXT:", k)
-	print("CREATED AT:", final_dict[k])
-	print("\n")
+	print "TEXT:", k
+	print "CREATED AT:", final_dict[k]
+	print "\n"
 
 
 
