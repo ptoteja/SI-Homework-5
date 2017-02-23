@@ -64,7 +64,7 @@ except:
 	CACHE_DICTION = {}
 
 def get_twitterinfo():
-	query = raw_input("What tweets should we look for?")
+	query = input("What tweets should we look for?")
 	if query in CACHE_DICTION:
 		print("Using cached data for", query)
 		search_results = CACHE_DICTION[query]
@@ -88,9 +88,9 @@ final_dict = {}
 for i in toJsonAgain["statuses"]:
 	final_dict[i['text']] = i['user']['created_at']
 for k in final_dict:
-	print "TEXT:", k
-	print "CREATED AT:", final_dict[k]
-	print "\n"
+	print("TEXT:", k)
+	print("CREATED AT:", final_dict[k])
+	print("\n")
 
 
 
